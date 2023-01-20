@@ -16,10 +16,17 @@ const SinglePost: React.FC<Props> = ({ item, posts, setPosts }) => {
     localStorage.setItem("post", JSON.stringify(posts));
   }, [posts]);
 
-  const editHandler = (id: number) => {
+  const editHandler = async (id: number) => {
+    const response = await axios.patch(
+      `https://diary-app-sever.onrender.com/api/v1/diary/update/${id}`,
+      { post: editPost }
+    );
+
+    const data = response.data;
+
     setPosts(
       posts.map((item) =>
-        item._id === id ? { ...item, post: editPost } : item
+        item._id === id ? { ...item, post: data.post } : item
       )
     );
     setEdit(false);
@@ -27,7 +34,7 @@ const SinglePost: React.FC<Props> = ({ item, posts, setPosts }) => {
 
   const deleteHandler = async (id: number) => {
     const response = await axios.delete(
-      `http://localhost:5000/api/v1/diary/delete/${id}`
+      `https://diary-app-sever.onrender.com/api/v1/diary/delete/${id}`
     );
 
     const data = response.data;

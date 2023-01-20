@@ -18,7 +18,9 @@ const App = () => {
 
   useEffect(() => {
     const getData = async () => {
-      const response = await axios.get("http://localhost:5000/api/v1/diary/");
+      const response = await axios.get(
+        "https://diary-app-sever.onrender.com/api/v1/diary/"
+      );
 
       const data = response.data;
 
@@ -35,14 +37,13 @@ const App = () => {
     e.preventDefault();
 
     const response = await axios.post(
-      "http://localhost:5000/api/v1/diary/create",
+      "https://diary-app-sever.onrender.com/api/v1/diary/create",
       {
         post: value,
       }
     );
 
     const data = response.data;
-    console.log(data);
 
     if (response) {
       setPosts((prev) => [...prev, data]);
