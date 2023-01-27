@@ -27,8 +27,6 @@ const App = () => {
       if (response) {
         setPosts(data);
       }
-
-      console.log(data);
     };
     getData();
   }, []);
@@ -57,11 +55,11 @@ const App = () => {
         <div>
           <form
             className="flex justify-center items-center flex-col
-             mx-auto max-w-2xl"
+             mx-auto md:max-w-2xl max-w-md"
             onSubmit={submitHandler}
           >
             <textarea
-              className="focus:shadow-soft-primary-outline mt-4 min-h-unset text-sm leading-5.6 ease-soft block h-auto w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-3 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-fuchsia-300 focus:outline-none"
+              className="focus:shadow-soft-primary-outline mt-4 min-h-unset text-sm leading-5.6 ease-soft block h-auto w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-3 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-fuchsia-300 focus:outline-none "
               placeholder="Write your thoughts here..."
               value={value}
               onChange={(e) => setValue(e.target.value)}
