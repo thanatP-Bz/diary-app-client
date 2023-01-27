@@ -45,7 +45,7 @@ const SinglePost: React.FC<Props> = ({ item, posts, setPosts }) => {
   };
 
   return (
-    <form className="bg-white mb-4 md:max-w-2xl  w-screen md:mx-auto mx-1 max-w-[22rem] rounded-md">
+    <form className="bg-white mb-4 md:max-w-2xl w-screen md:mx-auto mx-1 max-w-[22rem] rounded-md">
       <p className="p-3">{item.createdAt}</p>
       <div className="bg-gray-200 h-[1px] max-w-4xl mx-3"></div>
       {edit ? (
