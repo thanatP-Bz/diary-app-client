@@ -74,7 +74,7 @@ const App = () => {
             </div>
           </form>
 
-          <div className="flex justify-center items-center mt-2">
+          <div className="flex justify-center items-center mt-3">
             <PostForm posts={posts} setPosts={setPosts} />
           </div>
         </div>
