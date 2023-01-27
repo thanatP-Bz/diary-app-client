@@ -55,7 +55,7 @@ const App = () => {
         <div>
           <form
             className="flex justify-center items-center flex-col
-             mx-auto md:max-w-2xl max-w-md"
+            md:mx-auto md:max-w-2xl  mx-1 max-w-[22rem]"
             onSubmit={submitHandler}
           >
             <textarea
