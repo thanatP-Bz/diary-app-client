@@ -44,7 +44,7 @@ const App = () => {
     const data = response.data;
 
     if (response) {
-      setPosts((prev) => [...prev, data]);
+      setPosts((prev) => [data, ...prev]);
       setValue("");
     }
   };
